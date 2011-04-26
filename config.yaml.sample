@@ -1,0 +1,23 @@
+# XMPP Configuration
+xmpp:
+    jid: me@you.com/quotebot
+    password: some_pass
+    debug: true
+    presence: Wanna hear a quote?
+
+# The queue keys can be anything unique, I just put them here so 
+# it's easy to repurpose an existing Redis installation for this 
+# without stomping on anything.
+redis:
+    server: 127.0.0.1
+    port: 6379
+    db_number: 1
+    queue_in_key: quotebot-in
+    queue_out_key: quotebot-out
+
+# Buddies are the JIDs that are allowed to communicate with the bot. It's a 
+# whitelist of JIDs that you've given permission to interact with and they 
+# also will get auto-authorized for roster updates. 
+# Note: these are BARE JIDs!
+allowed_buddies:
+    - me@foo.com
